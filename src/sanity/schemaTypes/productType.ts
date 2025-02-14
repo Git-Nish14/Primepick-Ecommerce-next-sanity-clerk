@@ -1,5 +1,6 @@
 import { TrolleyIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
+import { blockContentType } from "./blockContentType"; // Import block content
 
 export const productType = defineType({
   name: "product",
@@ -34,7 +35,7 @@ export const productType = defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "text", // Changed to "text" since "blockContent" might not exist
+      type: "blockContent",
     }),
     defineField({
       name: "price",
@@ -61,11 +62,12 @@ export const productType = defineType({
       media: "image",
       price: "price",
     },
-    prepare(select) {
+    prepare(selection) {
+      const { title, price, media } = selection;
       return {
-        title: select.title,
-        subtitle: `$${select.price}`, 
-        media: select.media,
+        title,
+        subtitle: `$${price}`,
+        media,
       };
     },
   },
