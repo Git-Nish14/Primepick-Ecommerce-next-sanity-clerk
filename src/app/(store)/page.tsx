@@ -1,7 +1,9 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-function page() {
+export default async function Home() {
+  const products = await getAllproducts();
+
   return (
     <div>
       <h1>hello world 123</h1>
@@ -9,5 +11,3 @@ function page() {
     </div>
   );
 }
-
-export default page;
