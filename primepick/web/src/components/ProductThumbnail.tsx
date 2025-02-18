@@ -13,12 +13,11 @@ function ProductThumb({ product }: { product: Product }) {
         isOutOfStock ? "opacity-50" : ""
       }`}
     >
-      hello
       <div className="relative aspect-square w-full h-full overflow-hidden">
         {product.image && (
           <Image
             className="object-contain transition-transform duration-300 group-hover:scale-105"
-            src={imageURL(product.image).url()} // Corrected image URL function
+            src={imageURL(product.image).url()}
             alt={product.name || "Product image"}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -30,10 +29,16 @@ function ProductThumb({ product }: { product: Product }) {
           </div>
         )}
       </div>
-      <div>
+      <div className="p-4">
         <h2 className="text-lg font-semibold text-gray-800 truncate">
           {product.name}
         </h2>
+
+        {/* ✅ Add Price Here */}
+        <p className="text-lg font-bold text-blue-500 mt-1">
+          ${product.price?.toFixed(2)}
+        </p>
+
         <p className="mt-2 text-sm text-gray-600 line-clamp-2">
           {product.description?.map((block) =>
             block._type === "block"

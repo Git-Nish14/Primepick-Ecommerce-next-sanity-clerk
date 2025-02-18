@@ -8,7 +8,6 @@ export type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <main>
-      <Header />
       {children}
       {/* <Footer /> */}
     </main>
