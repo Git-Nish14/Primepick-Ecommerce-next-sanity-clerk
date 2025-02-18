@@ -1,14 +1,15 @@
 "use client";
 import { ClerkLoaded, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import React from "react";
-import Form from "next/form"; // Ensure you have a valid Form component
+import React, { useState } from "react";
 import { PackageIcon, TrolleyIcon } from "@sanity/icons";
 import { SignedIn } from "@clerk/clerk-react";
+import { useRouter } from "next/navigation";
 
 function Header() {
   const { user } = useUser();
-  console.log(user);
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
 
   const createClerkPasskey = async () => {
     try {
@@ -16,6 +17,13 @@ function Header() {
       console.log(response);
     } catch (err) {
       console.error("Error:", JSON.stringify(err, null, 2));
+    }
+  };
+
+  const handleSearch = (e: any) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?query=${searchQuery}`);
     }
   };
 
@@ -30,19 +38,27 @@ function Header() {
           primepick
         </Link>
 
-        <Form
-          action="/search"
-          className="w-full sm:w-auto sm:flex-1 sm:mx-4 mt-2 sm:mt-0"
+        <form
+          onSubmit={handleSearch}
+          className="w-full sm:w-auto sm:flex-1 sm:mx-4 mt-2 sm:mt-0 relative"
         >
           <input
             type="text"
             name="query"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for products"
             className="
               bg-gray-100 text-gray-800 px-4 py-2 rounded focus:outline-none 
               focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 border w-full max-w-4xl"
           />
-        </Form>
+          <button
+            type="submit"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500 px-4 "
+          >
+            search
+          </button>
+        </form>
 
         <div className="flex items-center space-x-4 mt-4 sm:mt-0 flex-1 sm:flex-none">
           {/* Basket Link */}

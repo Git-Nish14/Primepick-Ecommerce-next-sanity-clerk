@@ -15,7 +15,7 @@ export default async function Home() {
         <HoliBanner />
       </div>
       <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4">
-        <ProductsView products={products} categories={[]} />
+        <ProductsView products={products} categories={categories} />
       </div>
     </Layout>
   );
