@@ -70,3 +70,18 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes spriteAnimation {
+  0% { background-position: 0 0; }
+  100% { background-position: -18600px 0; } /* Total width */
+}
+
+.loader {
+  width: 150px;  /* Frame width */
+  height: 150px; /* Frame height */
+  background-image: url('/sprite_sheet.png');
+  background-repeat: no-repeat;
+  animation: spriteAnimation 2s steps(124) infinite;
+}
+
+
