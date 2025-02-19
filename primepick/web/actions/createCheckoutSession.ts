@@ -38,8 +38,20 @@ export async function createCheckoutSession(
     }
     const baseUrl =
       process.env.NODE_ENV === "production"
-        ? `https://${process.env.VERCEL_URL}`
-        : `${process.env.NEXT_PUBLIC_BASE_URL}`;
+        ? process.env.VERCEL_URL
+          ? `https://${process.env.VERCEL_URL}`
+          : (() => {
+              throw new Error(
+                "Missing VERCEL_URL environment variable in production"
+              );
+            })()
+        : process.env.NEXT_PUBLIC_BASE_URL
+          ? process.env.NEXT_PUBLIC_BASE_URL
+          : (() => {
+              throw new Error(
+                "Missing NEXT_PUBLIC_BASE_URL environment variable in development"
+              );
+            })();
 
     const successUrl = `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`;
 
