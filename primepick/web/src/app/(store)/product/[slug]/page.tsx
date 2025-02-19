@@ -3,6 +3,8 @@ import { getProductBySlug } from "../../../../../lib/products/getProductBySlug";
 import { imageURL } from "../../../../../lib/image";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
+import { Button } from "@/components/ui/button";
+import AddToBasketButton from "@/components/AddToBasketButton";
 
 async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -49,6 +51,9 @@ async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
             <div className="text-lg md:text-2xl  text-blue-500 font-semibold mb-3">
               ${product.price?.toFixed(2)}
             </div>
+          </div>
+          <div className="mt-6">
+            <AddToBasketButton product={product} disabled={isOutOfStock} />
           </div>
         </div>
       </div>
