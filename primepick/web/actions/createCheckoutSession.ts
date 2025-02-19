@@ -3,6 +3,7 @@
 import Stripe from "stripe";
 import { BasketItem } from "../lib/store/store";
 import stripe from "@/lib/stripe";
+import { imageURL } from "../lib/image";
 
 export type Metadata = {
   orderNumber: string;
@@ -50,10 +51,21 @@ export async function createCheckoutSession(
         price_data: {
           currency: "usd",
           unit_amount: Math.round(item.product.price! * 100),
+          product_data: {
+            name: item.product.name || "Unnamed Product",
+            description: `PRODUCT_ID: ${item.product._id}`,
+            metadata: {
+              id: item.product._id,
+            },
+            images: item.product.image
+              ? [imageURL(item.product.image).url()]
+              : undefined,
+          },
         },
         quantity: item.quantity,
       })),
     });
+    return session.url;
   } catch (error) {
     console.error("Error creating checkout session", error);
     throw error;

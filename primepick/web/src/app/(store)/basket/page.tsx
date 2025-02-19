@@ -7,7 +7,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { imageURL } from "../../../../lib/image";
 import Loader from "@/components/Loader";
-import { Metadata } from "../../../../actions/createCheckoutSession";
+import {
+  createCheckoutSession,
+  Metadata,
+} from "../../../../actions/createCheckoutSession";
 
 function BasketPage() {
   const groupedItems = useBasketStore((state) => state.getGroupedItems());
