@@ -1,6 +1,6 @@
 PrimePick - Modern E-commerce App
 
-Welcome to PrimePick, a modern e-commerce application built with cutting-edge technologies to provide a seamless shopping experience. The app is live and accessible at: PrimePick E-commerce
+Welcome to PrimePick, a modern e-commerce application built with cutting-edge technologies to provide a seamless shopping experience. The app is live and accessible at: https://primepick-ecommerce.vercel.app/
 
 🚀 Tech Stack
 
@@ -20,7 +20,7 @@ TypeScript (TSX) - Strongly typed React components
 
 🌐 Live Demo
 
-PrimePick E-commerce
+https://primepick-ecommerce.vercel.app/
 
 📌 Features
 
