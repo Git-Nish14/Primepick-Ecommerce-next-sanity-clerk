@@ -3,6 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {deskStructure} from './deskStructure/structure'
+import {presentationTool} from 'sanity/presentation'
 
 export default defineConfig({
   name: 'default',
@@ -16,6 +17,14 @@ export default defineConfig({
       structure: deskStructure,
     }),
     visionTool(),
+    presentationTool({
+      previewUrl: {
+        preview: '/',
+        previewMode: {
+          enable: '/draft-mode/enable',
+        },
+      },
+    }),
   ],
 
   schema: {
