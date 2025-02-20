@@ -3,7 +3,6 @@ import { getProductBySlug } from "../../../../../lib/products/getProductBySlug";
 import { imageURL } from "../../../../../lib/image";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
-import { Button } from "@/components/ui/button";
 import AddToBasketButton from "@/components/AddToBasketButton";
 
 async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -16,10 +15,10 @@ async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const isOutOfStock = product.stock != null && product.stock <= 0;
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 py-8">
+    <div className=" mt-[8rem] md:mt-[4rem] container mx-auto max-w-5xl px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
-          className={`relative w-full max-w-[400px] mx-auto aspect-square overflow-hidden rounded-lg shadow-lg ${
+          className={` mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 relative w-full max-w-[400px] mx-auto aspect-square overflow-hidden rounded-lg shadow-lg ${
             isOutOfStock ? "opacity-50" : ""
           }`}
         >
@@ -37,7 +36,7 @@ async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
             </div>
           )}
         </div>
-        <div className="p-6 border border-gray-300 rounded-lg shadow-lg bg-white max-w-2xl mx-auto ">
+        <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12 xl:mt-16 p-6 border border-gray-300 rounded-lg shadow-lg bg-white max-w-2xl mx-auto">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold mb-3 text-red-700">
               {product.name}

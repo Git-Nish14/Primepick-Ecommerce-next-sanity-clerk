@@ -32,7 +32,7 @@ function Header() {
   };
 
   return (
-    <header className="flex flex-wrap justify-between items-center px-4 py-2">
+    <header className="fixed top-0 left-0 w-full flex flex-wrap items-center justify-between px-4 py-2 bg-white shadow-md z-50 md:flex-nowrap">
       {/* Top row */}
       <div className="flex w-full flex-wrap justify-between items-center">
         <Link
@@ -53,14 +53,14 @@ function Header() {
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for products"
             className="
-              bg-gray-100 text-gray-800 px-4 py-2 rounded focus:outline-none 
+              bg-gray-100 text-gray-800 px-4 py-2 rounded-full border-blue-300 focus:outline-none 
               focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 border w-full max-w-4xl"
           />
           <button
             type="submit"
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500 px-4 "
           >
-            search
+            🔍
           </button>
         </form>
 

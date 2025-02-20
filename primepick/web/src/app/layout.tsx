@@ -28,12 +28,12 @@ export default async function RootLayout({
     <ClerkProvider dynamic>
       <html lang="en">
         <body>
-          {/* {(await draftMode()).isEnabled && (
+          {(await draftMode()).isEnabled && (
             <>
               <DisableDraftMode />
-              <VisualEditing studioUrl={studioUrl} />
+              <VisualEditing />
             </>
-          )} */}
+          )}
           <main>
             <Header />
             {children}

@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <Layout>
-      <div>
+      <div className="md:mt-[4rem] mt-[10rem] sm:mt-[5rem]">
         <HoliBanner />
       </div>
       <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4">
