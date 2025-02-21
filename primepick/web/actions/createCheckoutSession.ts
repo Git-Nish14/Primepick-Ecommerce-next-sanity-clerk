@@ -1,6 +1,4 @@
 "use server";
-
-import Stripe from "stripe";
 import { BasketItem } from "../lib/store/store";
 import stripe from "@/lib/stripe";
 import { imageURL } from "../lib/image";
