@@ -17,22 +17,20 @@ const Footer: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-center justify-between flex-wrap gap-3">
         {/* Left: Copyright */}
         <p className="text-xs sm:text-sm text-center sm:text-left w-full sm:w-auto">
-          &copy; {new Date().getFullYear()} Your Company. All rights reserved.
+          &copy; {new Date().getFullYear()} Nish Patel. All rights reserved.
         </p>
 
         {/* Center: Navigation Links */}
         <div className="flex flex-wrap justify-center gap-4 w-full sm:w-auto">
-          <a href="#" className="hover:underline">
-            Home
+          <a className="hover:underline">Nishpatel.cse@gmail.com</a>
+          <a href="https://github.com/Git-Nish14" className="hover:underline">
+            Github
           </a>
-          <a href="#" className="hover:underline">
-            About
-          </a>
-          <a href="#" className="hover:underline">
-            Services
-          </a>
-          <a href="#" className="hover:underline">
-            Contact
+          <a
+            href="https://www.linkedin.com/in/nishpatel14/"
+            className="hover:underline"
+          >
+            LinkedIn
           </a>
         </div>
 

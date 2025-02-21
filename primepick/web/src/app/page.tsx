@@ -11,10 +11,12 @@ export default async function Home() {
 
   return (
     <Layout>
-      <div className="md:mt-[4rem] mt-[10 rem] sm:mt-[5rem]">
+      {/* Responsive margin fixes */}
+      <div className="mt-40 sm:mt-10 md:mt-14 lg:mt-16 w-full">
         <HoliBanner />
       </div>
-      <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 ">
+
+      <div className="container mx-auto flex flex-col items-center md:items-start justify-start min-h-screen bg-gray-100 px-4 sm:px-6 md:px-8 lg:px-10 w-full">
         <ProductsView products={products} categories={categories} />
       </div>
     </Layout>

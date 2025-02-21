@@ -6,28 +6,39 @@ export async function getMyOrders(userId: string) {
     throw new Error("User ID is required");
   }
 
-  // Define the query to get orders based on user ID, sorted by orderDate descending
-  const MY_ORDERS_QUERY = defineQuery(`
+  console.log("Fetching orders for user:", userId);
+
+  const MY_ORDERS_QUERY = `
     *[_type == "order" && clerkUserId == $userId] | order(orderDate desc) {
-        ...
+        _id,
+        orderNumber,
+        orderDate,
+        status,
+        totalPrice,
+        amountDiscount,
+        currency,
         products[]{
-            ...
-            product->
+            quantity,
+            product->{
+                _id,
+                name,
+                price,
+                image
+            }
         }
     }
-    `);
+  `;
 
   try {
-    // Use sanityFetch to send the query
     const orders = await sanityFetch({
       query: MY_ORDERS_QUERY,
-      params: { userId },
+      params: { userId: String(userId).trim() }, // Ensure it's a string
     });
 
-    // Return the list of orders, or an empty array if none are found
-    return orders.data || [];
+    console.log("Sanity Orders Fetched:", orders);
+    return orders || [];
   } catch (error) {
-    console.error("Error fetching orders:", error);
+    console.error("Sanity Fetch Error:", error);
     throw new Error("Error fetching orders");
   }
 }
