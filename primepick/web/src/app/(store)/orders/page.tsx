@@ -12,28 +12,22 @@ async function Orders() {
     return redirect("/");
   }
 
-  // Fetch orders for the authenticated user
-  console.log("Authenticated User ID:", userId);
-
-  const orders = await getMyOrders(userId);
-
-  // Debugging: Check if orders are being fetched correctly
-  console.log("Fetched Orders:", orders);
+  const Orders = await getMyOrders(userId);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-4">
       <div className="bg-white p-4 sm:p-8 rounded-xl shadow-lg w-full max-w-4xl">
-        <h1 className="text-4xl font-bold text-red-700 tracking-tight mb-8">
+        <h1 className="text-4xl font-bold text-red-700 -tracking-tight mb-8">
           My Orders
         </h1>
 
-        {orders.data.length === 0 ? (
+        {Orders.length === 0 ? (
           <div className="text-center text-gray-600">
             <p>You have not placed any orders yet.</p>
           </div>
         ) : (
-          <div className="space-y-6">
-            {orders.data.map((order: any) => (
+          <div className="p-4 sm:p-6 border-b border-gray-200">
+            {Orders.map((order: any) => (
               <div
                 key={order.orderNumber}
                 className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden"
@@ -78,7 +72,6 @@ async function Orders() {
                       </p>
                     </div>
                   </div>
-
                   {order.amountDiscount ? (
                     <div className="mt-4 p-3 sm:p-4 bg-red-50 rounded-lg">
                       <p className="text-red-600 font-medium mb-1 text-sm sm:text-base">
@@ -131,7 +124,7 @@ async function Orders() {
                                 product.product.price * product.quantity,
                                 order.currency
                               )
-                            : "N/A"}
+                            : "NA"}
                         </p>
                       </div>
                     ))}
