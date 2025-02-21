@@ -11,10 +11,10 @@ export default async function Home() {
 
   return (
     <Layout>
-      <div className="md:mt-[4rem] mt-[10rem] sm:mt-[5rem]">
+      <div className="md:mt-[4rem] mt-[10 rem] sm:mt-[5rem]">
         <HoliBanner />
       </div>
-      <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4">
+      <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4 ">
         <ProductsView products={products} categories={categories} />
       </div>
     </Layout>
