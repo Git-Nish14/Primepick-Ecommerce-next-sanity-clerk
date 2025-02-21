@@ -5,7 +5,6 @@ import ProductThumbnail from "@/components/ProductThumbnail";
 
 function ProductGrid({ products }: { products: Product[] }) {
   return (
-    // Wrap your grid in a container to avoid excessive stretching on large screens
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         {products?.map((product) => (
