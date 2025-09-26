@@ -20,7 +20,7 @@ TypeScript (TSX) - Strongly typed React components
 
 🌐 Live Demo
 
-https://primepick-ecommerce.vercel.app/
+https://primepick-ecommerce.vercel.app
 
 📌 Features
 
@@ -54,5 +54,4 @@ npm run dev  # or yarn dev
 
 This project is open-source and available under the MIT License.
 
-Made with ❤️ by Nish Patel
-CEO- www.techifive.com
+Made with ❤️ and 🧠 by Nish Patel
