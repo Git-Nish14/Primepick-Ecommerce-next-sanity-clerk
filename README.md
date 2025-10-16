@@ -1,6 +1,6 @@
 PrimePick - Modern E-commerce App
 
-Welcome to PrimePick, a modern e-commerce application built with cutting-edge technologies to provide a seamless shopping experience. The app is live and accessible at: https://primepick-ecommerce.vercel.app/
+Welcome to PrimePick, a modern e-commerce application built with cutting-edge technologies to provide a seamless shopping experience. The app is live and accessible at: https://primepick-ecommerce.vercel.app
 
 🚀 Tech Stack
 
@@ -39,16 +39,20 @@ https://primepick-ecommerce.vercel.app
 To run this project locally, follow these steps:
 
 # Clone the repository
+
 git clone https://github.com/your-username/primepick.git
 
 # Navigate to the project directory
+
 cd primepick
 
 # Install dependencies
-npm install  # or yarn install
+
+npm install # or yarn install
 
 # Start the development server
-npm run dev  # or yarn dev
+
+npm run dev # or yarn dev
 
 📄 License
 
