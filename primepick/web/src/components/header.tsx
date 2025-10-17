@@ -270,46 +270,7 @@ function Header() {
 
       {/* Navigation Buttons (Desktop only, not on landing page) */}
       {mounted && pathname !== "/" && isLargeScreen && (
-        <div className="fixed top-24 left-6 flex gap-3 z-40">
-          <button
-            onClick={() => router.back()}
-            className="bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all w-10 h-10 flex items-center justify-center"
-            aria-label="Go back"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={() => router.forward()}
-            className="bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all w-10 h-10 flex items-center justify-center"
-            aria-label="Go forward"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </div>
+        <div className="fixed top-24 left-6 flex gap-3 z-40"></div>
       )}
     </header>
   );
